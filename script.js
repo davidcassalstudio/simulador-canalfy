@@ -9,12 +9,19 @@ function calc() {
     var clientName = client;
     document.getElementById("clientName").innerHTML = clientName;
 
-    var revenue = parseInt(ticket) * parseInt(partners) * parseInt(conversionPercent)/100;
+    var revenue = parseFloat(ticket) * parseFloat(partners) * parseFloat(conversionPercent)/100;
     document.getElementById("revenue").innerHTML = revenue;
 
-    var comission = parseInt(revenue) * parseInt(comissionPercent)/100;
+    var comission = parseFloat(revenue) * parseFloat(comissionPercent)/100;
     document.getElementById("comission").innerHTML = comission;
 
-    var totalInvested = parseInt(comission) + parseInt(monthlyCanalfy);
+    var partnersNumber = parseFloat(partners);
+    document.getElementById("partnersNumber").innerHTML = partnersNumber;
+
+    var totalInvested = parseFloat(comission) + parseFloat(monthlyCanalfy);
     document.getElementById("totalInvested").innerHTML = totalInvested;
+
+    var costPartial = parseFloat(totalInvested) / parseFloat(revenue);
+    var costOfSale = parseFloat(costPartial)*100;
+    document.getElementById("costOfSale").innerHTML = costOfSale;
 }
