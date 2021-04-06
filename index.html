@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Simulador de Receita Canalfy</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="form">
+            <label for="client">Nome da loja</label>
+            <input type="text" name="client" id="client" value="" />
+
+            <label for="ticket">Ticket Médio</label>
+            <input type="number" name="ticket" id="ticket" />
+
+            <label for="partners">Qtd. Parceiros</label>
+            <input type="number" name="partners" id="partners" />
+
+            <label for="conversionPercent">Taxa de conversão</label>
+            <input type="number" name="conversionPercent" id="conversionPercent" value="15" />
+
+            <label for="comissionPercent">Taxa de comissão</label>
+            <input type="number" name="comissionPercent" id="comissionPercent" value="10" />
+
+            <label for="monthlyCanalfy">Mensalidade Canalfy</label>
+            <input type="number" name="monthlyCanalfy" id="monthlyCanalfy" value="1500" />
+            
+            <button onclick="calc()">Calcular</button>
+        </div>
+
+        <div class="results">
+            <h1>Olá, <span id="clientName"></span>!</h1>
+
+            <h2>Receita</h2>
+            <p id="revenue"></p>
+
+            <h2>Comissão de Parceiros</h2>
+            <p id="comission"></p>
+
+            <h2>Total Investido</h2>
+            <p id="totalInvested"></p>
+        </div>
+    </div>
+</body>
+</html>
