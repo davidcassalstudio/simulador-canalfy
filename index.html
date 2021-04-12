@@ -26,7 +26,7 @@
                 <input type="text" name="client" id="client" value="" />
 
                 <label for="ticket">Ticket Médio</label>
-                <input type="text" name="ticket" id="ticket" size="12" onKeyUp="mascaraMoeda(this, event)" value="" />
+                <input type="text" name="ticket" id="ticket" value="" />
 
                 <label for="partners">Qtd. Parceiros</label>
                 <input type="text" name="partners" id="partners" value="" />
@@ -53,40 +53,14 @@
                 <div class="resume-results">
                     <h1>Olá, <span id="clientName"></span>!</h1>
 
-                    <!-- <h2>Receita</h2>
-                    <p>R$ <span id="revenue">00</span></p>
+                    <p>Em 12 meses de parceria você pode atingir a receita total de R$ <span id="totalRevenue"></span> e cerca de <span id="totalPartners"></span> parceiros na sua base de revendedores.</p>
 
-                    <h2>Comissão de Parceiros</h2>
-                    <p>R$ <span id="comission">00</span></p>
-
-                    <h2>Número de Pedidos</h2>
-                    <p><span id="requestsNumber">00</span></p>
-
-                    <h2>Número de Parceiros</h2>
-                    <p><span id="partnersNumber">00</span></p>
-
-                    <h2>Ticket Médio</h2>
-                    <p>R$ <span id="ticketMiddle">00</span></p>
-
-                    <h2>Taxa de Conversão</h2>
-                    <p><span id="conversionRate">00</span>%</p>
-
-                    <h2>Comissão Percentual</h2>
-                    <p><span id="comissionRate">00</span>%</p>
-
-                    <h2>Mensalidade da Canalfy</h2>
-                    <p>R$ <span id="canalfy">00</span></p>
-
-                    <h2>Total Investido</h2>
-                    <p>R$ <span id="totalInvested">00</span></p>
-
-                    <h2>Custo de Venda</h2>
-                    <p><span id="costOfSale">00</span>%</p> -->
+                    <p><a href="#table">Veja a projeção da parceria mês a mês</a>.</p>
                 </div>
             </div>
         </div>
 
-        <div class="table-results">
+        <div class="table-results" id="table">
             <div class="tab-head">
                 <div class="tab-col">Mês</div>
                 <div class="tab-col">Receita</div>
