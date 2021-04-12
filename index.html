@@ -7,67 +7,269 @@
     <title>Simulador de Receita Canalfy</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
     <script src="script.js"></script>
 </head>
 
 <body>
     <div class="box">
-        <div class="form">
-            <p>Preencha os dados abaixo para obter os resultados:</p>
-            
-            <label for="client">Nome da loja</label>
-            <input type="text" name="client" id="client" value="" />
+        <div class="title">
+            <h1>Calculadora e Simulador de Receita Canalfy</h1>
 
-            <label for="ticket">Ticket Médio</label>
-            <input type="number" name="ticket" id="ticket" />
-
-            <label for="partners">Qtd. Parceiros</label>
-            <input type="number" name="partners" id="partners" />
-
-            <label for="conversionPercent">Taxa de conversão</label>
-            <input type="number" name="conversionPercent" id="conversionPercent" value="15" />
-
-            <label for="comissionPercent">Taxa de comissão</label>
-            <input type="number" name="comissionPercent" id="comissionPercent" value="10" />
-
-            <label for="monthlyCanalfy">Mensalidade Canalfy</label>
-            <input type="number" name="monthlyCanalfy" id="monthlyCanalfy" value="1500" />
-            
-            <button onclick="calc()">Calcular</button>
+            <p>Use nossa calculadora para descobrir o potencial da sua parceria com a Canalfy em uma projeção de 12 meses.</p>
         </div>
 
-        <div class="results">
-            <h1>Olá, <span id="clientName"></span>!</h1>
+        <div class="form-area">
+            <div class="form">            
+                <label for="client">Nome da loja</label>
+                <input type="text" name="client" id="client" value="" />
 
-            <h2>Receita</h2>
-            <p>R$ <span id="revenue">00</span></p>
+                <label for="ticket">Ticket Médio</label>
+                <input type="text" name="ticket" id="ticket" size="12" onKeyUp="mascaraMoeda(this, event)" value="" />
 
-            <h2>Comissão de Parceiros</h2>
-            <p>R$ <span id="comission">00</span></p>
+                <label for="partners">Qtd. Parceiros</label>
+                <input type="text" name="partners" id="partners" value="" />
 
-            <h2>Número de Pedidos</h2>
-            <p><span id="requestsNumber">00</span></p>
+                <label for="conversionPercent">Taxa de conversão</label>
+                <input type="text" name="conversionPercent" id="conversionPercent" value="15" />
 
-            <h2>Número de Parceiros</h2>
-            <p><span id="partnersNumber">00</span></p>
+                <label for="comissionPercent">Taxa de comissão</label>
+                <input type="text" name="comissionPercent" id="comissionPercent" value="10" />
 
-            <h2>Ticket Médio</h2>
-            <p>R$ <span id="ticketMiddle">00</span></p>
+                <label for="basePercent">Crescimento da Base</label>
+                <input type="text" name="basePercent" id="basePercent" value="50" />
 
-            <h2>Taxa de Conversão</h2>
-            <p><span id="conversionRate">00</span>%</p>
+                <label for="monthlyCanalfy">Mensalidade Canalfy</label>
+                <input type="text" name="monthlyCanalfy" id="monthlyCanalfy" value="1500" />
+                
+                <button onclick="calc()">Calcular</button>
+            </div>
 
-            <h2>Comissão Percentual</h2>
-            <p><span id="comissionRate">00</span>%</p>
+            <div class="resume">
+                <div class="resume-placeholder">
+                    <span>Preencha as informações do formulário para obter o resultado da simulação.</span>
+                </div>
+                <div class="resume-results">
+                    <h1>Olá, <span id="clientName"></span>!</h1>
 
-            <h2>Mensalidade da Canalfy</h2>
-            <p>R$ <span id="canalfy">00</span></p>
+                    <!-- <h2>Receita</h2>
+                    <p>R$ <span id="revenue">00</span></p>
 
-            <h2>Total Investido</h2>
-            <p>R$ <span id="totalInvested">00</span></p>
+                    <h2>Comissão de Parceiros</h2>
+                    <p>R$ <span id="comission">00</span></p>
 
-            <h2>Custo de Venda</h2>
-            <p><span id="costOfSale">00</span>%</p>
+                    <h2>Número de Pedidos</h2>
+                    <p><span id="requestsNumber">00</span></p>
+
+                    <h2>Número de Parceiros</h2>
+                    <p><span id="partnersNumber">00</span></p>
+
+                    <h2>Ticket Médio</h2>
+                    <p>R$ <span id="ticketMiddle">00</span></p>
+
+                    <h2>Taxa de Conversão</h2>
+                    <p><span id="conversionRate">00</span>%</p>
+
+                    <h2>Comissão Percentual</h2>
+                    <p><span id="comissionRate">00</span>%</p>
+
+                    <h2>Mensalidade da Canalfy</h2>
+                    <p>R$ <span id="canalfy">00</span></p>
+
+                    <h2>Total Investido</h2>
+                    <p>R$ <span id="totalInvested">00</span></p>
+
+                    <h2>Custo de Venda</h2>
+                    <p><span id="costOfSale">00</span>%</p> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="table-results">
+            <div class="tab-head">
+                <div class="tab-col">Mês</div>
+                <div class="tab-col">Receita</div>
+                <div class="tab-col">Comissão de Parceiros</div>
+                <div class="tab-col">Número de Pedidos</div>
+                <div class="tab-col">Número de Parceiros</div>
+                <div class="tab-col">Ticket Médio</div>
+                <div class="tab-col">Taxa de Conversão</div>
+                <div class="tab-col">% de Parceiros</div>
+                <div class="tab-col">Mensalidade Canalfy</div>
+                <div class="tab-col">Total Investimento</div>
+                <div class="tab-col">Custo de Venda</div>
+            </div>
+
+            <div class="tab-body">
+                <div class="tab-line">
+                    <div class="tab-col">Mês 1</div>
+                    <div class="tab-col">R$ <span id="revenue">00</span></div>
+                    <div class="tab-col">R$ <span id="comission">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle">00</span></div>
+                    <div class="tab-col"><span id="conversionRate">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested">00</span></div>
+                    <div class="tab-col"><span id="costOfSale">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 2</div>
+                    <div class="tab-col">R$ <span id="revenue2">00</span></div>
+                    <div class="tab-col">R$ <span id="comission2">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber2">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber2">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle2">00</span></div>
+                    <div class="tab-col"><span id="conversionRate2">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate2">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy2">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested2">00</span></div>
+                    <div class="tab-col"><span id="costOfSale2">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 3</div>
+                    <div class="tab-col">R$ <span id="revenue3">00</span></div>
+                    <div class="tab-col">R$ <span id="comission3">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber3">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber3">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle3">00</span></div>
+                    <div class="tab-col"><span id="conversionRate3">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate3">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy3">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested3">00</span></div>
+                    <div class="tab-col"><span id="costOfSale3">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 4</div>
+                    <div class="tab-col">R$ <span id="revenue4">00</span></div>
+                    <div class="tab-col">R$ <span id="comission4">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber4">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber4">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle4">00</span></div>
+                    <div class="tab-col"><span id="conversionRate4">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate4">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy4">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested4">00</span></div>
+                    <div class="tab-col"><span id="costOfSale4">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 5</div>
+                    <div class="tab-col">R$ <span id="revenue5">00</span></div>
+                    <div class="tab-col">R$ <span id="comission5">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber5">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber5">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle5">00</span></div>
+                    <div class="tab-col"><span id="conversionRate5">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate5">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy5">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested5">00</span></div>
+                    <div class="tab-col"><span id="costOfSale5">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 6</div>
+                    <div class="tab-col">R$ <span id="revenue6">00</span></div>
+                    <div class="tab-col">R$ <span id="comission6">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber6">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber6">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle6">00</span></div>
+                    <div class="tab-col"><span id="conversionRate6">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate6">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy6">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested6">00</span></div>
+                    <div class="tab-col"><span id="costOfSale6">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 7</div>
+                    <div class="tab-col">R$ <span id="revenue7">00</span></div>
+                    <div class="tab-col">R$ <span id="comission7">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber7">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber7">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle7">00</span></div>
+                    <div class="tab-col"><span id="conversionRate7">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate7">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy7">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested7">00</span></div>
+                    <div class="tab-col"><span id="costOfSale7">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 8</div>
+                    <div class="tab-col">R$ <span id="revenue8">00</span></div>
+                    <div class="tab-col">R$ <span id="comission8">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber8">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber8">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle8">00</span></div>
+                    <div class="tab-col"><span id="conversionRate8">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate8">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy8">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested8">00</span></div>
+                    <div class="tab-col"><span id="costOfSale8">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 9</div>
+                    <div class="tab-col">R$ <span id="revenue9">00</span></div>
+                    <div class="tab-col">R$ <span id="comission9">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber9">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber9">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle9">00</span></div>
+                    <div class="tab-col"><span id="conversionRate9">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate9">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy9">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested9">00</span></div>
+                    <div class="tab-col"><span id="costOfSale9">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 10</div>
+                    <div class="tab-col">R$ <span id="revenue10">00</span></div>
+                    <div class="tab-col">R$ <span id="comission10">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber10">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber10">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle10">00</span></div>
+                    <div class="tab-col"><span id="conversionRate10">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate10">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy10">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested10">00</span></div>
+                    <div class="tab-col"><span id="costOfSale10">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 11</div>
+                    <div class="tab-col">R$ <span id="revenue11">00</span></div>
+                    <div class="tab-col">R$ <span id="comission11">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber11">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber11">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle11">00</span></div>
+                    <div class="tab-col"><span id="conversionRate11">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate11">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy11">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested11">00</span></div>
+                    <div class="tab-col"><span id="costOfSale11">00</span>%</div>
+                </div>
+
+                <div class="tab-line">
+                    <div class="tab-col">Mês 12</div>
+                    <div class="tab-col">R$ <span id="revenue12">00</span></div>
+                    <div class="tab-col">R$ <span id="comission12">00</span></div>
+                    <div class="tab-col"><span id="requestsNumber12">00</span></div>
+                    <div class="tab-col"><span id="partnersNumber12">00</span></div>
+                    <div class="tab-col">R$ <span id="ticketMiddle12">00</span></div>
+                    <div class="tab-col"><span id="conversionRate12">00</span>%</div>
+                    <div class="tab-col"><span id="comissionRate12">00</span>%</div>
+                    <div class="tab-col">R$ <span id="canalfy12">00</span></div>
+                    <div class="tab-col">R$ <span id="totalInvested12">00</span></div>
+                    <div class="tab-col"><span id="costOfSale12">00</span>%</div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
