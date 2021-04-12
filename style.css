@@ -34,6 +34,8 @@ body {
     text-align: left;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
+
+    scroll-behavior: smooth;
 }
 
 img,
@@ -154,6 +156,21 @@ p {
 
 .box .form-area .resume .resume-results {
     display: none;
+}
+
+.box .form-area .resume .resume-results h1 {
+    color: #6f6f6f;
+}
+
+.box .form-area .resume .resume-results a {
+    position: relative;
+
+    display: inline-block;
+    margin-top: 20px;
+
+    font-weight: 900;
+    color: #07c154;
+    text-decoration: none;
 }
 
 .table-results {
