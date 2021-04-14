@@ -15,15 +15,22 @@
 <body>
     <header class="banner-intro">
         <div class="logo-canalfy">
-            <img src="img/logo-canalfy-branco.png" alt="Logotipo Canalfy" />
+            <figure>
+                <img src="img/logo-canalfy-branco.png" alt="Logotipo Canalfy" />
+                <figcaption>Calculadora e Simulador de Receita</figcaption>
+            </figure>
+            
         </div>
         <div class="title-banner">
-            <h1>Calculadora e Simulador de Receita Canalfy</h1>
+            <h1>
+                <span>Liberdade e Controle Total</span>
+                <span>Para o Seu Novo Programa de Parceiros</span>
+            </h1>
         </div>
     </header>
 
     <section class="intro-text">
-        <p>Quisque et mattis magna. Donec non purus pellentesque, placerat elit vitae, tincidunt metus. Integer vehicula varius arcu nec ullamcorper. Donec vel felis tortor. Donec ex lectus, interdum eu odio eu, iaculis sollicitudin nunc. Vestibulum sed augue a urna consectetur lobortis. Sed vestibulum dapibus est sed ultricies. Nulla mattis, dui at lobortis mollis, nibh ex consectetur massa, sed pellentesque tellus mi id ipsum. Vestibulum volutpat sollicitudin odio sit amet mattis.</p>
+        <p>Nosso simulador de receita ajuda você de maneira rápida e precisa a ter uma melhor visão do equilíbrio entre seus ganhos e despesas com o programa de parceiros. Preencha os campos e acompanhe em tempo real o retorno previsto para sua empresa. Veja o resultado final e fale com nossos consultores especialistas para você planejar e implementar esse grande salto em sua empresa.</p>
     </section>
 
     <div class="box">
@@ -34,9 +41,10 @@
                     <input type="text" name="client" id="client" value="" />
                 </div>
 
-                <div class="input">
+                <div class="input dinner">
                     <label for="ticket">Ticket Médio</label>
                     <input type="text" name="ticket" id="ticket" onkeyup="return(moeda(this,'.','.',event))" maxlength="15" value="" />
+                    <div class="money-input">R$</div>
                 </div>
                 
                 <div class="input">
@@ -44,24 +52,28 @@
                     <input type="text" name="partners" id="partners" value="" />
                 </div>
                 
-                <div class="input">
+                <div class="input percent">
                     <label for="conversionPercent">Taxa de conversão</label>
                     <input type="text" name="conversionPercent" id="conversionPercent" value="" />
+                    <div class="percent-input">%</div>
                 </div>
                 
-                <div class="input">
+                <div class="input percent">
                     <label for="comissionPercent">Taxa de comissão</label>
                     <input type="text" name="comissionPercent" id="comissionPercent" value="" />
+                    <div class="percent-input">%</div>
                 </div>
                 
-                <div class="input">
+                <div class="input percent">
                     <label for="basePercent">Crescimento da Base</label>
                     <input type="text" name="basePercent" id="basePercent" value="" />
+                    <div class="percent-input">%</div>
                 </div>
                 
-                <div class="input">
+                <div class="input dinner">
                     <label for="monthlyCanalfy">Mensalidade Canalfy</label>
                     <input type="text" name="monthlyCanalfy" id="monthlyCanalfy" onkeyup="return(moeda(this,'.','.',event))" maxlength="15" value="" />
+                    <div class="money-input">R$</div>
                 </div>
                 
                 <div class="input-submit">

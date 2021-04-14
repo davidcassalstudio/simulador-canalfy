@@ -92,10 +92,10 @@ label:first-child {
 }
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
-    font-size: 6.2rem;
-    line-height: 8rem;
+    font-size: 4.2rem;
+    line-height: 6rem;
     font-weight: 700;
 }
 
@@ -129,9 +129,23 @@ p {
     margin: 0 auto;
 }
 
-.banner-intro .logo-canalfy img {
+.banner-intro .logo-canalfy figure {
+    display: flex;
+}
+
+.banner-intro .logo-canalfy figure img {
     height: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 75px;
+}
+
+.banner-intro .logo-canalfy figure figcaption {
+    padding-left: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.banner-intro .title-banner h1 span {
+    display: block;
 }
 
 .intro-text {
@@ -170,6 +184,44 @@ p {
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+}
+
+.box .form-area .form .input {
+    position: relative;
+}
+
+.box .form-area .form .dinner input {
+    padding-left: 40px;
+}
+
+.box .form-area .form .input .money-input {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.box .form-area .form .input .percent-input {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+
+    font-size: 1.3rem;
+    color: #333;
 }
 
 .box .form-area .resume {
@@ -269,7 +321,7 @@ p {
     font-size: 1.4rem;
     line-height: 2rem;
     color: #6f6f6f;
-    text-align: center;
+    text-align: left;
 }
 
 .table-results .tab-body .tab-line .tab-col:first-child {
@@ -287,9 +339,46 @@ p {
     min-width: 180px;
 }
 
+@media screen and (max-width: 768px) {
+    .intro-text {
+        margin: -50px 40px 50px;
+    }
+}
+
 @media screen and (max-width: 520px) {
+    .banner-intro,
+    .banner-intro .logo-canalfy,
+    .banner-intro .title-banner,
     .box {
-        grid-template-columns: 1fr;
         padding: 20px;
+    }
+
+    .intro-text {
+        margin: -50px 20px 50px;
+    }
+
+    .box .form-area .form {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    h1 {
+        font-size: 2.4rem;
+        line-height: 4rem;
+        margin-bottom: 80px;
+    }
+
+    p {
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+    }
+
+    .banner-intro .logo-canalfy figure img {
+        margin-bottom: 25px;
+    }
+
+    .banner-intro .logo-canalfy figure figcaption {
+        font-size: 1.2rem;
     }
 }
