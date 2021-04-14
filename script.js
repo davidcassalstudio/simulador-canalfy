@@ -604,7 +604,7 @@ function calc() {
         var totalRevenue = totalRevenuePartial.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         document.getElementById("totalRevenue").innerHTML = totalRevenue;
 
-        var totalPartnersPartial = parseFloat(partnersNumber) + parseFloat(partnersNumber2) + parseFloat(partnersNumber3) + parseFloat(partnersNumber4) + parseFloat(partnersNumber5) + parseFloat(partnersNumber6) + parseFloat(partnersNumber7) + parseFloat(partnersNumber8) + parseFloat(partnersNumber9) + parseFloat(partnersNumber10) + parseFloat(partnersNumber11) + parseFloat(partnersNumber12);
+        var totalPartnersPartial = parseFloat(partnersNumber12);
         var totalPartners = totalPartnersPartial.toFixed(2);
         document.getElementById("totalPartners").innerHTML = Math.round(totalPartners);
 
