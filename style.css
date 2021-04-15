@@ -386,3 +386,18 @@ p {
         font-size: 1.2rem;
     }
 }
+
+@media screen and (max-width: 340px) {
+    .table-results .tab-body .tab-line {
+        padding: 10px;
+    }
+
+    .table-results .tab-col {
+        min-width: 120px;
+        width: 120px;
+    }
+
+    .banner-intro .logo-canalfy figure figcaption {
+        font-size: .8rem;
+    }
+}

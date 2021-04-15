@@ -625,3 +625,12 @@ function moeda(i) {
 	v = v.replace(/(\d)(\d{3}),/g, "$1.$2,");
 	i.value = v;
 }
+
+function numero(i) {
+	var v = i.value.replace(/\D/g,'');
+	v = (v/100).toFixed(2) + '';
+	v = v.replace(".", ".");
+	
+	v = v.replace(/(\d)(\d{3}),/g, "$1.$2,");
+	i.value = v;
+}
